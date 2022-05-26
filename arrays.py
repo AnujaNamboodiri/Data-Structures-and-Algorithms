@@ -1,5 +1,5 @@
 #  Problem 1 : Look for a particular element in an array and return the index if found
-#  Time complexity = O(n) searching algorithm is 'Linear Search' 
+#  Time complexity = O(n) searching algorithm is 'Linear Search' (worst case scenario)
 
 def linearSearch(arr, search_element, n):
 	for i in range(n):
@@ -10,6 +10,7 @@ def linearSearch(arr, search_element, n):
 	return -1
     # Element is not present inside the array
 
+## Driver Code
 arr = [53, 12, 32, 17, 30,19]
 search_element = 93     ## Try different values to test the code
 n = len(arr)
@@ -23,6 +24,7 @@ print("Search element results is:", result)
 
 def binarySearch(array, i, j, x):
 	## Single element problem
+	## For small problems time complexity : O(1) --> constant time complexity
 	if i == j:
 		if array[i] == x:
 			return i
@@ -30,7 +32,7 @@ def binarySearch(array, i, j, x):
 			return -1
 	## Multi-element problem
 	else:
-		mid = i + (j-i) // 2
+		mid = i + (j-i) // 2		# constant
 		if array[mid] == x:
 			return mid
 		elif array[mid] < x:
@@ -40,6 +42,7 @@ def binarySearch(array, i, j, x):
 			## Recursive call
 			return binarySearch(array, i, mid-1, x)			
 
+## Driver Code
 array = [ 5, 10, 20, 27, 30, 35, 39, 42]
 i = 0
 j = len(array) - 1
